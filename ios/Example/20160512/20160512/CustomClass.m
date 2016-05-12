@@ -12,6 +12,8 @@
 
 @implementation CustomClass
 
+//제곱승 함수 구현
+//num^exp
 - (NSInteger) powNum:(NSInteger)num exp:(NSInteger) exp{
     NSInteger returnNum = 1;
     if(exp == 0){
@@ -24,6 +26,7 @@
     return returnNum;
 }
 
+//윤년의 월을 구하는 함수
 -(NSInteger) leapYear:(NSInteger)year month:(NSInteger)month{
     int day = 0;
     if(month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12){
@@ -40,6 +43,9 @@
     return day;
 }
 
+//마지막 입력의 소수점 자리를 반올림 한다.
+//단 마지막 자리가 0.x5(여기서 x는 0을 표현한다 자리수를 모르므로 )를 했을경우 반올림이 되고
+//나머지 값은 버린다.
 - (CGFloat) roundsNum:(CGFloat)num{
     CGFloat cal1, cal2;
     NSInteger count=0;
@@ -58,6 +64,7 @@
     return (((NSInteger)(num * (pow(10,count-1)) + 0.5)) / pow(10,count-1));
 }
 
+//입력받은 년도와 일을 사용하여 현재년도의 월일을 구한다.
 - (void) inputYear:(NSInteger)year afterDay:(NSInteger)day{
     
     NSInteger month =1;
@@ -84,22 +91,18 @@
         }
         
     }
-    NSInteger lastDayOfMonth = 1;
-    
-    while(lastDayOfMonth < day){
-        
-    }
-    
     NSLog(@"%ld년 %ld일 번째의 날은 %ld월 %ld일", year, day, month, date);
-    
 }
 
+
+//입력받은 숫자(정수)를 역으로 출력을한다.
 - (NSInteger) reverseNum:(NSInteger)num{
     NSMutableArray *arry = [[NSMutableArray alloc]initWithCapacity:1];
     NSInteger value = num;
     NSInteger num1=1;
     NSNumber *val = 0;
     
+    //입력받은 숫자를 자리수 별로 배열에 저장
     while(1){
         if(num <= 0){
             break;
@@ -116,6 +119,7 @@
     value = 0;
     num1 =(arry.count-1);
     
+    //배열을 순서대로 하여 리턴하여준다.
     for(NSInteger i=0; i<arry.count; i++){
         
         val = arry[i];
