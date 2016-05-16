@@ -193,13 +193,13 @@
 	
 	__Objective-C 기초__
 
-		__클래스와 객체__
+		클래스와 객체
 			
-			__선언부(Interface)__
+			선언부(Interface)
 				헤더 파일 내 @interface ~ @end 사이에 기록
 				메서드, 프로퍼티를 선언한다.
 			
-			__구현부(Implementation)__
+			구현부(Implementation)
 				클래스의 인스턴스 변수 및 메서드의 구현 실제코드가 담긴다.
 				_.m_ 파일에 @implementation @end 사이에 기록을 한다.
 				@implementation [ClassName] : NSObject
@@ -214,7 +214,7 @@
 			실습 : ios/Example/TestScore/TestScore/main.m
              	  ios/Example/TestScore/TestScore/CalculationScore.*
 
-            __인스턴스화와 초기화__
+            인스턴스화와 초기화
             	Car *evoke =[[Car alloc]init];
             	Car *evoke = new Car();
             	 * alloc : 객체를 사용하기 위한 메모리 공간을 확보한다.  
