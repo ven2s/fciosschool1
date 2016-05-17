@@ -1,14 +1,12 @@
 //
 //  CustomClass.m
-//  20160512
+//  Day160512
 //
 //  Created by David June Kang on 2016. 5. 12..
 //  Copyright © 2016년 ven2s. All rights reserved.
 //
 
 #import "CustomClass.h"
-
-
 
 @implementation CustomClass
 
@@ -47,16 +45,16 @@
 //단 마지막 자리가 0.x5(여기서 x는 0을 표현한다 자리수를 모르므로 )를 했을경우 반올림이 되고
 //나머지 값은 버린다.
 - (CGFloat) roundsNum:(CGFloat)num{
-    CGFloat cal1, cal2;
+    CGFloat number1, number2;
     NSInteger count=0;
     
-    cal1 = num;
-    cal2 = 0;
+    number1 = num;
+    number2 = 0;
     
-    while((CGFloat)((NSInteger)cal1)!= cal2){
+    while((CGFloat)((NSInteger)number1)!= number2){
         
-        cal1 *= 10;
-        cal2 = cal1;
+        number1 *= 10;
+        number2 = number1;
         
         count++;
     }
@@ -109,7 +107,7 @@
         }
         
         value = num %10;
-       
+        
         [arry addObject:[NSNumber numberWithInteger:value]];
         //NSLog(@"%ld %ld\n",value, num);
         
@@ -125,9 +123,9 @@
         val = arry[i];
         
         value += val.integerValue * [self powNum:10 exp:num1];
-       // NSLog(@"%ld %ld %ld\n",val.integerValue, value, [self powNum:10 exp:num1]);
+        // NSLog(@"%ld %ld %ld\n",val.integerValue, value, [self powNum:10 exp:num1]);
         num1--;
-         
+        
         //NSLog(@"%@\n",arry[i]);
     }
     

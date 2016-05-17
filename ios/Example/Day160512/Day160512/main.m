@@ -1,6 +1,6 @@
 //
 //  main.m
-//  20160512
+//  Day160512
 //
 //  Created by David June Kang on 2016. 5. 12..
 //  Copyright © 2016년 ven2s. All rights reserved.
@@ -21,4 +21,3 @@ int main(int argc, const char * argv[]) {
     }
     return 0;
 }
-
