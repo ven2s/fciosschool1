@@ -90,186 +90,174 @@
 
 	__C언어 기초 2차__
 		
-		조건문 = if, switch
+	조건문 = if, switch
+	비교연산자(>, <, <= ...), 조건연산자(&&, ||)
+	반복문 예제를 통한 반복문 실습 
 		
-		비교연산자(>, <, <= ...), 조건연산자(&&, ||)
-		
-		반복문 예제를 통한 반복문 실습 
-		
-			369게임만들기 : ios/Homework/Day9/Day9/main.m
+	369게임만들기 : ios/Homework/Day9/Day9/main.m
 			
 + __10일차__
 
 	__Review 및 실습__
 
-		기본변수선언과 타입, 함수의 선언 및 작성, 조건문, 반복문, 비교연산자와 조건연산자
+	기본변수선언과 타입, 함수의 선언 및 작성, 조건문, 반복문, 비교연산자와 조건연산자
 
-		실습 : ios/Homework/Day10/Day10/main.m
-			swap 두 개 값 변경하기
-			삼각수와 특정 배수의 삼각수 구하기
-			지정한 숫자까지 더하기
-			D-Day구하기(단, 현재일과 기준일을 입력받는다.)
+	실습 : ios/Homework/Day10/Day10/main.m
+	swap 두 개 값 변경하기
+	삼각수와 특정 배수의 삼각수 구하기
+	지정한 숫자까지 더하기
+	D-Day구하기(단, 현재일과 기준일을 입력받는다.)
 
 ### 3주차
 
 + __11일차__
 
 	__실습__
-
-		D-Day구하기2 : ios/Homework/Day11/Day11/main.m (강사님 예시)
+	D-Day구하기2 : ios/Homework/Day11/Day11/main.m (강사님 예시)
 
 	__Objective-C__
+	변수
+	값타입 : NSInteger, CGFloat, BOOL, NSString
 
-		변수
-			값타입 : NSInteger, CGFloat, BOOL, NSString
-
-			참조형 타입 : id, ClassName * (모든 객체는 참조형타입)
+	참조형 타입 : id, ClassName * (모든 객체는 참조형타입)
 		
-		실습
-			성적총점 및 평균 구하기,구구단 출력하기 ios/Example/Day_Exam/Day_Exam/main.m
+	실습
+	성적총점 및 평균 구하기,구구단 출력하기 
+	ios/Example/Day_Exam/Day_Exam/main.m
 
 	__기본 데이터 클래스__
 
-		배열 : NSArray, NSMutableArray ...
-			같은 타입의 자료가 연속적으로 저장된다.
-			인덱스를 통하여 데이터를 접근, 관리한다. 
+	배열 : NSArray, NSMutableArray ...
+	같은 타입의 자료가 연속적으로 저장된다.
+	인덱스를 통하여 데이터를 접근, 관리한다. 
 
-			NSArray는 id type을 받는 정적배열 객체이다.(Objective-C에서만 사용 가능)
-				@[@1,@2,@3]
+	NSArray는 id type을 받는 정적배열 객체이다.(Objective-C에서만 사용 가능)
+	@[@1,@2,@3]
 
-			NSMutableArray는 동적배열이다.
-				* list자료형 구조를 가진 배열
+	NSMutableArray는 동적배열이다.
+	\* list자료형 구조를 가진 배열
 
-		문자열 : NSString
-			Foundtion Framework에 수록 
-			Objective-C에서 사용하는 문자열 
-			@"[문자열]"을 사용함
+	문자열 : NSString
+	Foundtion Framework에 수록 
+	Objective-C에서 사용하는 문자열 
+	@"[문자열]"을 사용함
 
-		숫자형 : NSNumber, NSInteger 등
-			단, 참조형의 경우에는 실제 연산이 불가능하다.
-			ex) NSNumber @3 + @5 = ?   => (Error)
-			    NSInteger 3 + 5  = ?   => 8
-			    NSNumber *num1 = @3, *num2 = @5
-			    num1.integerValue + num2.integerValue = ? => 8
+	숫자형 : NSNumber, NSInteger 등
+	단, 참조형의 경우에는 실제 연산이 불가능하다.
+	ex) 
+	``` 
+	NSNumber @3 + @5 = ?   => (Error)
+	NSInteger 3 + 5  = ?   => 8
+	NSNumber *num1 = @3, *num2 = @5
+	num1.integerValue + num2.integerValue = ? => 8
 
-			    if(num1 < num2){
-			    	NSLog(@"TRUE");
-			    }
+	if(num1 < num2){
+      NSLog(@"TRUE");
+	}
 
+	//For In 구문 
+	for [type *name] in [collection]{
 
-		For In 구문 
-			for [type *name] in [collection]{
+	}
+```
 
-			}
+  __객체지향__
 
+	OOP(Object-Oriented Programming)? 프로그래밍 패러다임중 현실세계의 모든 사물을 "객체화" 한것을 말한다.
+	(하나의 독립된 단위, 메세지단위로 데이터를 처리)
+	\*\* 단점 : 필요한것 외에것을 다 가져와야한다, 설계가 힘들고 속도가 느리다,
 
+	클래스 : 같은 종류 집단에 속하는 행위와 속성을 정의한것
+	변수와 함수(메서드)로 구성되어 있다.
 
-	__객체지향__
-
-		OOP(Object-Oriented Programming)? 프로그래밍 패러다임중 현실세계의 모든 사물을 "객체화" 한것을 말한다.
-		                                  (하나의 독립된 단위, 메세지단위로 데이터를 처리)
-			단점 : 필요한것 외에것을 다 가져와야한다, 설계가 힘들고 속도가 느리다,
-
-		클래스 : 같은 종류 집단에 속하는 행위와 속성을 정의한것
-			변수와 함수(메서드)로 구성되어 있다.
-
-		객체 : 클래스가 인스턴스(실제로 메모리에상에 할당된것	)이다.
-			* _nil_ 상태는 객체의 실제 주소값이 할당되지 않았을 경우 나타난다.
+	객체 : 클래스가 인스턴스(실제로 메모리에상에 할당된것	)이다.
+	\* _nil_ 상태는 객체의 실제 주소값이 할당되지 않았을 경우 나타난다.
 		
-		메서드 : 클래스로 부터 생성된 객체를 사용하는 방법으로 메세지를 통해 객체에 명령이 전달된다.
+	메서드 : 클래스로 부터 생성된 객체를 사용하는 방법으로 메세지를 통해 객체에 명령이 전달된다.
 
 + __12일차__
 	
 	__Objective-C 기초__
 
-		클래스와 객체
+	__1. 클래스와 객체__
+	선언부(Interface)
+	헤더 파일 내 @interface ~ @end 사이에 기록
+	메서드, 프로퍼티를 선언한다.
 			
-			선언부(Interface)
-				헤더 파일 내 @interface ~ @end 사이에 기록
-				메서드, 프로퍼티를 선언한다.
-			
-			구현부(Implementation)
-				클래스의 인스턴스 변수 및 메서드의 구현 실제코드가 담긴다.
-				_.m_ 파일에 @implementation @end 사이에 기록을 한다.
-				@implementation [ClassName] : NSObject
-				{
-					NSString *name; //인스턴스 변수
-				}
-				-([리턴타입]) 식별자:(타입)매개변수명 .... {
-					//실행부
-				}
-				@End
-		
-			실습 : ios/Example/TestScore/TestScore/main.m
-             	  ios/Example/TestScore/TestScore/CalculationScore.*
+	구현부(Implementation)
+	클래스의 인스턴스 변수 및 메서드의 구현 실제코드가 담긴다.
+	_.m_ 파일에 @implementation @end 사이에 기록을 한다.
+	```
+	@implementation [ClassName] : NSObject
+	{
+	  NSString *name; //인스턴스 변수
+	}
+	-([리턴타입]) 식별자:(타입)매개변수명 .... {
+	  //실행부
+	}
+	@End
+	```	
+	실습 
+	: ios/Example/TestScore/TestScore/main.m
+  : ios/Example/TestScore/TestScore/CalculationScore.*
 
-            인스턴스화와 초기화
-            	Car *evoke =[[Car alloc]init];
-            	Car *evoke = new Car();
-            	 * alloc : 객체를 사용하기 위한 메모리 공간을 확보한다.  
-            	 * init  : 객체를 쓰기 위한 초기화를 한다.
-            	   ex) alloc은 그림을 그리기 위한 캔버스가 만들어지고 초기화는 그 그림을 그리기 
-            	       위해 준비가 된 상태이다. 
+  인스턴스화와 초기화
+  ```
+  Car *evoke =[[Car alloc]init];
+  Car *evoke = new Car();
+  ```
+  \* alloc : 객체를 사용하기 위한 메모리 공간을 확보한다.  
+  \* init  : 객체를 쓰기 위한 초기화를 한다.
+   ex) alloc은 그림을 그리기 위한 캔버스가 만들어지고 초기화는 그 그림을 그리기 위해 준비가 된 상태이다. 
 
-        상속 : 새로운 클래스가 기존의 클래스의 속성(자료)와 행위(연산)을 이용할수 있게 하는 기능
-				@Implementation Car : NSObject  : NSObject를 상속 받는다
+  상속 : 새로운 클래스가 기존의 클래스의 속성(자료)와 행위(연산)을 이용할수 있게 하는 기능
+	@Implementation Car : NSObject  : NSObject를 상속 받는다
 
-        메소드 : 인스턴스가 수행하는 행동
-        	[-,+] ([type])[식별자1]:([type])[매개변수명] [식별자2]:([type])[매개변수명]
+  메소드 : 인스턴스가 수행하는 행동
+    [-,+] ([type])[식별자1]:([type])[매개변수명] [식별자2]:([type])[매개변수명]
 
-        	실습 : ios/Example/TestScore/TestScore/ToolBox.*
+  실습 : ios/Example/TestScore/TestScore/ToolBox.*
 
 + __14일차__
 	
 	리뷰 및 자습 과 실습
-      
-    	CardDeck : ios/Homework/CardDeck/CardDeck/
+  CardDeck : ios/Homework/CardDeck/CardDeck/
 
 + __15일차__
 
 	따라치기
-
-		VendingMachine
-
-			/ios/Example/VendingMachine/VendingMachine/*.*
+	VendingMachine
+	: /ios/Example/VendingMachine/VendingMachine/*.*
 
 ### 4주차
 
 + __16일차__
-	어플리케이션 생명주기
-		메인루프동작모식도에 따른 App의 작동 순서
-
-		AppDelegate내부의 작동이 어떻게 되는가?
-
-		MVC모델로 살펴보는 구조
+어플리케이션 생명주기
+메인루프동작모식도에 따른 App의 작동 순서
+AppDelegate내부의 작동이 어떻게 되는가?
+MVC모델로 살펴보는 구조
 
 + 17일차
 
-	리뷰
-		
-		alloc 과 dealloc 작동
+	__1. 리뷰__
+	alloc 과 dealloc 작동
+	클래스메서드와 인스턴스메서드 안에서의 작동
+	\* Application에서 강제로 종료가 났을경우 ARC에서 정보를 가지고 있다가 그 시점과 동시에 종료 ( Garbage Collection과는 다르다. 비슷한 역활을 한다.)
 
-		클래스메서드와 인스턴스메서드 안에서의 작동
-		
-		 * Application에서 강제로 종료가 났을경우 ARC에서 정보를 가지고 있다가 그 시점과 동시에 종료 ( Garbage Collection과는 다르다. 비슷한 역활을 한다.)
-
-	StoryBorad 익히기
-
-		StoryBoard를 이용한 클래스컨트롤 연결 및 버튼 액션 추가
-
-		AutoLayout
+	__2. StoryBorad 익히기__
+  StoryBoard를 이용한 클래스컨트롤 연결 및 버튼 액션 추가
+  
+  __3. AutoLayout__
 
 + 18일차
 	
-	알고리즘
-		
-		실습을 통한 Stack구조 이해
+	__자료구조실습__
+	실습을 통한 Stack구조 이해
 
 + 19일차
 	 
-	  ARC란? compiler time단에서 자동적으로 메모리를 해제해준다.
-
-	  Property란? 외부에서 객체의 내부변수를 접근하기 위한 부분이다. 
+	ARC란? compiler time단에서 자동적으로 메모리를 해제해준다.
+  Property란? 외부에서 객체의 내부변수를 접근하기 위한 부분이다. 
 
 
 ### 5주차
