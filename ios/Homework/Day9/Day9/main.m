@@ -41,7 +41,7 @@ void checkLeapYear(int year){
     }
 }
 //구구단
-void getMultiplicationTable(int num){
+void showMultiplicationTable(int num){
     for(int i=1;i<=9;i++){
         printf("%d * %d = %d\n", num, i, num*i);
     }
@@ -99,7 +99,7 @@ int main(int argc, const char * argv[]) {
     checkLeapYear(2100);
     checkLeapYear(2016);
     
-    getMultiplicationTable(3);
+    showMultiplicationTable(3);
     
     factorial(5);
     game369(333);

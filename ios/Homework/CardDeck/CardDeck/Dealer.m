@@ -25,9 +25,17 @@
  ##2016.05.16. 변경점
   1. 변수에 대한 명확한 이름으로 변경
  
+ ## 2016.05.20 변경사항
+  - 색깔 설정을 NS_ENUM으로 변경
  */
 
 #import "Dealer.h"
+
+typedef NS_ENUM(NSInteger, CardColor){
+    CardColorRed,
+    CardColorBlack
+};
+
 
 @implementation Dealer
 {
@@ -65,10 +73,10 @@
     
     for(NSString *type in cardTypeArray){
         for(NSString *number in cardNumberArray){
-            if([type isEqual:@"♦︎"] || [type isEqual:@"♥︎"]){
-                color = cardColorArray[0];
+            if([type isEqualToString:@"♦︎"] || [type isEqualToString:@"♥︎"]){
+                color = cardColorArray[CardColorRed];
             }else{
-                color = cardColorArray[1];
+                color = cardColorArray[CardColorBlack];
             }
             
             card = [[Card alloc]initWithCardType:type cardNumber:number cardColor:color];

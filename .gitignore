@@ -56,7 +56,7 @@ fastlane/report.xml
 fastlane/screenshots
 
 #Add fileType
-*.xcodeproj
+#*.xcodeproj
 *.DS_Store
 *.xcassets
 *.lproj
