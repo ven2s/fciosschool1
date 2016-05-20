@@ -20,16 +20,21 @@
  //변경점
  //init 할때  => 카드 정보 
  //셔플은 별도 받아서 리턴만 하도록 
+ 
+ 
+ ##2016.05.16. 변경점
+  1. 변수에 대한 명확한 이름으로 변경
+ 
  */
 
 #import "Dealer.h"
 
 @implementation Dealer
 {
-    NSMutableArray *cardDeck;
-    NSArray *cardType;
-    NSArray *cardNum;
-    NSArray *cardColor;
+    NSMutableArray *cardDeckArray;
+    NSArray *cardTypeArray;
+    NSArray *cardNumberArray;
+    NSArray *cardColorArray;
 }
 
 //@overloading(재정의) init
@@ -37,9 +42,9 @@
 {
     self = [super init];
     if (self) {
-        cardType = @[@"♥︎", @"♠︎", @"♣︎", @"♦︎"]; //4
-        cardNum  = @[@"2",@"3", @"4", @"5", @"6", @"7",@"8", @"9", @"10", @"J", @"K", @"Q", @"A"]; //13
-        cardColor= @[@"Red", @"Black"]; //2
+        cardTypeArray = @[@"♥︎", @"♠︎", @"♣︎", @"♦︎"]; //4
+        cardNumberArray = @[@"2",@"3", @"4", @"5", @"6", @"7",@"8", @"9", @"10", @"J", @"K", @"Q", @"A"]; //13
+        cardColorArray = @[@"Red", @"Black"]; //2
     }
     return self;
 }
@@ -54,58 +59,58 @@
 - (void) createDeck{
     Card *card;
     
-    cardDeck = [[NSMutableArray alloc] initWithCapacity:1];//초기화
+    cardDeckArray = [[NSMutableArray alloc] initWithCapacity:1];//초기화
     
     NSString *color;
     
-    for(NSString *type in cardType){
-        for(NSString *num in cardNum){
+    for(NSString *type in cardTypeArray){
+        for(NSString *number in cardNumberArray){
             if([type isEqual:@"♦︎"] || [type isEqual:@"♥︎"]){
-                color = cardColor[0];
+                color = cardColorArray[0];
             }else{
-                color = cardColor[1];
+                color = cardColorArray[1];
             }
             
-            card = [[Card alloc]initWithType:type num:num color:color];
-            [cardDeck addObject:card];
+            card = [[Card alloc]initWithCardType:type cardNumber:number cardColor:color];
+            [cardDeckArray addObject:card];
         }
     }
     
-    NSLog(@"%ld", cardDeck.count);
+    NSLog(@"%ld", cardDeckArray.count);
     
-    cardDeck = [self shuffleDeck:cardDeck];
+    cardDeckArray = [self shuffleDeck:cardDeckArray];
 }
 
 //셔플1
 - (void) shuffleDeck{
-    NSInteger ranNum;
-    for(NSInteger i=0; i<cardDeck.count; i++){
-        ranNum = (arc4random() % cardDeck.count);
+    NSInteger randomNumber;
+    for(NSInteger i=0; i<cardDeckArray.count; i++){
+        randomNumber = (arc4random() % cardDeckArray.count);
         
-        if(ranNum >= cardDeck.count){
-            ranNum -= 10;
+        if(randomNumber >= cardDeckArray.count){
+            randomNumber -= 10;
         }
         
-        [cardDeck exchangeObjectAtIndex:i withObjectAtIndex:ranNum];
+        [cardDeckArray exchangeObjectAtIndex:i withObjectAtIndex:randomNumber];
     }
 }
 
 //@overloading(재정의) : 셔플1을 다시 정의함
 - (NSMutableArray *) shuffleDeck:(NSMutableArray *) array{
-    NSInteger ranNum;
-    NSMutableArray *retArray = array;;
+    NSInteger randomNumber;
+    NSMutableArray *returnArray = array;
     
-    for(NSInteger i=0; i<retArray.count; i++){
-        ranNum = (arc4random() % retArray.count);
-        [retArray exchangeObjectAtIndex:i withObjectAtIndex:ranNum];
+    for(NSInteger i=0; i<returnArray.count; i++){
+        randomNumber = (arc4random() % returnArray.count);
+        [returnArray exchangeObjectAtIndex:i withObjectAtIndex:randomNumber];
     }
 
-    return retArray;
+    return returnArray;
 }
 
 //덱의 상태를 출력한다.
 - (void) printDeck{
-    for(Card *c in cardDeck){
+    for(Card *c in cardDeckArray){
         [c printCard];
     }
 }

@@ -30,6 +30,10 @@
  OOP를 적용해서 구현을 했습니다.
  딜러는 카드를 상속하고 카드 자체의 정보는 값은 볼수 없지만 메소드를 통해서 카드정보만 출력 하도록 구현 하였습니다.
  
+ 
+ ##2016.05.16변경점
+ Dealer 객체의 매개변수변을 d -> dealer으로 변경
+ 
  */
 
 #import <Foundation/Foundation.h>
@@ -37,14 +41,14 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        Dealer *d = [[Dealer alloc]init]; //딜러객체초기화
+        Dealer *dealer = [[Dealer alloc]init]; //딜러객체초기화
         
-        [d createDeck]; //카드덱 생성
-        [d printDeck];  //현재 카드를 보여준다
+        [dealer createDeck]; //카드덱 생성
+        [dealer printDeck];  //현재 카드를 보여준다
         
         NSLog(@"\n========= Suffle it!!! ========\n");
-        [d shuffleDeck]; //딜러가 가지고 있는 덱을 셔플한다.
-        [d printDeck];   //덱을 보여준다.
+        [dealer shuffleDeck]; //딜러가 가지고 있는 덱을 셔플한다.
+        [dealer printDeck];   //덱을 보여준다.
         
     }
     return 0;
