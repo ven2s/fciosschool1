@@ -16,20 +16,20 @@
 @interface MainViewController () <WCustomButtonDelegate>
 
 //메뉴영역
-@property (nonatomic, weak) UIView *menuView;
+@property (nonatomic, weak) IBOutlet UIView *menuView;
 
 //500원 추가영역
-@property (nonatomic, weak) UIView *input500CoinArea;
+@property (nonatomic, weak) IBOutlet UIView *input500CoinArea;
 @property (nonatomic, weak) UILabel *title500CoinLB;
 @property (nonatomic, weak) UIButton *add500CoinBtn;
 
 //100원 추가영역
-@property (nonatomic, weak) UIView *input100CoinArea;
+@property (nonatomic, weak) IBOutlet UIView *input100CoinArea;
 @property (nonatomic, weak) UILabel *title100CoinLB;
 @property (nonatomic, weak) UIButton *add100CoinBtn;
 
 //돈컨트롤(잔액,반환버튼)
-@property (nonatomic, weak) UIView *moneyControllArea;
+@property (nonatomic, weak) IBOutlet UIView *moneyControllArea;
 @property (nonatomic, weak) UILabel *moneyTitleLB;
 @property (nonatomic, weak) UITextField *remainMoneyShowTF;
 @property (nonatomic, weak) UIButton *moneyChangeBtn;
@@ -54,8 +54,17 @@
     self.drinkBtnList = [[NSMutableArray alloc] initWithCapacity:4];
     self.trayBox = [[TrayBox alloc]init];
     self.casher = [[Casher alloc]init];
+//    [self createView];
+//    [self updateLayout];
+}
+
+
+-(void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
     [self createView];
     [self updateLayout];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,12 +75,12 @@
 //UI객체 생성
 - (void) createView{
     
-    UIColor *areaColor = [UIColor clearColor];
+//    UIColor *areaColor = [UIColor clearColor];
     
-    UIView *menuView = [[UIView alloc]init];
-    [menuView setBackgroundColor:areaColor];
-    [self.view addSubview:menuView];
-    self.menuView = menuView;
+//    UIView *menuView = [[UIView alloc]init];
+//    [menuView setBackgroundColor:areaColor];
+//    [self.view addSubview:menuView];
+//    self.menuView = menuView;
     {
         for(int i=0; i<maximumDrinkCount; i++){
 
@@ -87,62 +96,62 @@
             [drinkBtn setCost:[NSString stringWithFormat:@"%ld원",drinkData.cost]];
             drinkBtn.delegate = self;
             [drinkBtn setImageWithName:[NSString stringWithFormat:@"drink%d",i+1]];
-            [menuView addSubview:drinkBtn];
+            [self.menuView addSubview:drinkBtn];
             
             [self.drinkBtnList addObject:drinkBtn];
         }
     }
 
-    UIView *input500CoinArea = [[UIView alloc]init];
-    [input500CoinArea setBackgroundColor:areaColor];
-    [self.view addSubview:input500CoinArea];
-    self.input500CoinArea = input500CoinArea;
+//    UIView *input500CoinArea = [[UIView alloc]init];
+//    [input500CoinArea setBackgroundColor:areaColor];
+//    [self.view addSubview:input500CoinArea];
+//    self.input500CoinArea = input500CoinArea;
     {
         UILabel *title500CoinLB = [[UILabel alloc]init];
         title500CoinLB.text = @"500원";
         title500CoinLB.textColor = [UIColor blackColor];
         title500CoinLB.textAlignment = NSTextAlignmentRight;
-        [input500CoinArea addSubview:title500CoinLB];
+        [self.input500CoinArea addSubview:title500CoinLB];
         self.title500CoinLB = title500CoinLB;
         
         UIButton *add500CoinBtn = [UIButton buttonWithType:UIButtonTypeContactAdd];
                                    
         add500CoinBtn.tag = 500;
         [add500CoinBtn addTarget:self action:@selector(onTouchupInsideAddCoin:) forControlEvents:UIControlEventAllEvents];
-        [input500CoinArea addSubview:add500CoinBtn];
+        [self.input500CoinArea addSubview:add500CoinBtn];
         self.add500CoinBtn = add500CoinBtn;
     }
 
-    UIView *input100CoinArea = [[UIView alloc]init];
-    [input100CoinArea setBackgroundColor:areaColor];
-    [self.view addSubview:input100CoinArea];
-    self.input100CoinArea = input100CoinArea;
+//    UIView *input100CoinArea = [[UIView alloc]init];
+//    [input100CoinArea setBackgroundColor:areaColor];
+//    [self.view addSubview:input100CoinArea];
+//    self.input100CoinArea = input100CoinArea;
     {
         UILabel *title100CoinLB = [[UILabel alloc]init];
         title100CoinLB.text = @"100원";
         title100CoinLB.textColor = [UIColor blackColor];
         title100CoinLB.textAlignment = NSTextAlignmentRight;
-        [input100CoinArea addSubview:title100CoinLB];
+        [self.input100CoinArea addSubview:title100CoinLB];
         self.title100CoinLB = title100CoinLB;
         
         UIButton *add100CoinBtn = [UIButton buttonWithType:UIButtonTypeContactAdd];
         add100CoinBtn.tag = 100;
         [add100CoinBtn addTarget:self action:@selector(onTouchupInsideAddCoin:) forControlEvents:UIControlEventAllEvents];
-        [input100CoinArea addSubview:add100CoinBtn];
+        [self.input100CoinArea addSubview:add100CoinBtn];
         self.add100CoinBtn = add100CoinBtn;
 
     }
     
-    UIView *moneyControllArea = [[UIView alloc]init];
-    [moneyControllArea setBackgroundColor:areaColor];
-    [self.view addSubview:moneyControllArea];
-    self.moneyControllArea = moneyControllArea;
+//    UIView *moneyControllArea = [[UIView alloc]init];
+//    [moneyControllArea setBackgroundColor:areaColor];
+//    [self.view addSubview:moneyControllArea];
+//    self.moneyControllArea = moneyControllArea;
     {
         UILabel *moneyTitleLB = [[UILabel alloc]init];
         moneyTitleLB.text = @"Money";
         moneyTitleLB.textColor = [UIColor blackColor];
         moneyTitleLB.font =[UIFont systemFontOfSize:15];
-        [moneyControllArea addSubview:moneyTitleLB];
+        [self.moneyControllArea addSubview:moneyTitleLB];
         self.moneyTitleLB = moneyTitleLB;
         
         
@@ -150,7 +159,7 @@
         remainMoneyShowTF.userInteractionEnabled = NO;
         remainMoneyShowTF.borderStyle = UITextBorderStyleLine;
         remainMoneyShowTF.textAlignment = NSTextAlignmentCenter;
-        [moneyControllArea addSubview:remainMoneyShowTF];
+        [self.moneyControllArea addSubview:remainMoneyShowTF];
         self.remainMoneyShowTF = remainMoneyShowTF;
 
         
@@ -159,7 +168,7 @@
         [moneyChangeBtn addTarget:self action:@selector(onTouchupInsideMoneyChangeBtn:) forControlEvents:UIControlEventTouchUpInside];
         [moneyChangeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [moneyChangeBtn setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-        [moneyControllArea addSubview:moneyChangeBtn];
+        [self.moneyControllArea addSubview:moneyChangeBtn];
         self.moneyChangeBtn = moneyChangeBtn;
         
     }
@@ -240,7 +249,7 @@
     }
 }
 
-- (void) onTouchupInsideAddCoin:(UIButton *)sender{
+- (IBAction) onTouchupInsideAddCoin:(UIButton *)sender{
     NSInteger tag = sender.tag;
     if(tag == 100){
         [self.casher addCoin100];
@@ -253,7 +262,7 @@
     [self.remainMoneyShowTF setText:[NSString stringWithFormat:@"%zd",(long)self.casher.inputMoney]];
 }
 
-- (void) onTouchupInsideMoneyChangeBtn:(UIButton *)sender{
+- (IBAction) onTouchupInsideMoneyChangeBtn:(UIButton *)sender{
     
     NSDictionary *coinDic = [self.casher changeMoney];
     NSNumber *coin500Count = coinDic[@"500"];
@@ -271,4 +280,5 @@
     [self.displayView setText:[self.displayView.text stringByAppendingString:changeMsg]];
 
 }
+
 @end

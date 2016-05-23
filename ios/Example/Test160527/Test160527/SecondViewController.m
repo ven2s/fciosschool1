@@ -14,24 +14,62 @@
 
 @implementation SecondViewController
 
+
+-(void) loadView{
+    [super loadView];
+    NSLog(@"Second View Controller loadView");
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSLog(@"Second View Controller viewDidLoad");
 }
 
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    NSLog(@"Second View Controller viewWillApper");
+}
+
+
+-(void) viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
+    
+    NSLog(@"Second View Controller viewWillLayoutSubviews");
+    
+}
+
+-(void) viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    NSLog(@"Second View Controller viewDidLayoutSubview");
+}
+
+-(void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    NSLog(@"Second View Controller viewWillDisappear");
+}
+
+-(void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSLog(@"Second View Controller viewDisappear");
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    NSLog(@"Second View Controller viewDidDisappear");
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(IBAction) onTouchupInsideCloseBtn:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-*/
 
+-(void) dealloc{
+    NSLog(@"Second View Controller dealloc\n\n");
+}
 @end

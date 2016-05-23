@@ -428,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Test160527/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ven2s.Test160527;
@@ -439,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Test160527/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ven2s.Test160527;
@@ -511,6 +513,7 @@
 				8EB4D8A01CEAB2BA00BC78AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8EB4D8A11CEAB2BA00BC78AA /* Build configuration list for PBXNativeTarget "Test160527Tests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +522,7 @@
 				8EB4D8A31CEAB2BA00BC78AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8EB4D8A41CEAB2BA00BC78AA /* Build configuration list for PBXNativeTarget "Test160527UITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +531,7 @@
 				8EB4D8A61CEAB2BA00BC78AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
