@@ -15,8 +15,8 @@
 		8E1700D81CF0212000BE5C50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1700D61CF0212000BE5C50 /* LaunchScreen.storyboard */; };
 		8E1700E31CF0212000BE5C50 /* LoginTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1700E21CF0212000BE5C50 /* LoginTestTests.m */; };
 		8E1700EE1CF0212000BE5C50 /* LoginTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1700ED1CF0212000BE5C50 /* LoginTestUITests.m */; };
-		8E1700FC1CF025AF00BE5C50 /* Beautiful-Blur-Wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E1700FB1CF025AF00BE5C50 /* Beautiful-Blur-Wallpaper.jpg */; };
-		8E1700FE1CF0366800BE5C50 /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E1700FD1CF0366800BE5C50 /* 12.jpg */; };
+		8E44B23B1CF4433C00E2CD76 /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E44B2391CF4433C00E2CD76 /* 12.jpg */; };
+		8E44B23C1CF4433C00E2CD76 /* Beautiful-Blur-Wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E44B23A1CF4433C00E2CD76 /* Beautiful-Blur-Wallpaper.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +53,8 @@
 		8E1700E91CF0212000BE5C50 /* LoginTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1700ED1CF0212000BE5C50 /* LoginTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginTestUITests.m; sourceTree = "<group>"; };
 		8E1700EF1CF0212000BE5C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E1700FB1CF025AF00BE5C50 /* Beautiful-Blur-Wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Beautiful-Blur-Wallpaper.jpg"; path = "../../../../../../Downloads/Beautiful-Blur-Wallpaper.jpg"; sourceTree = "<group>"; };
-		8E1700FD1CF0366800BE5C50 /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 12.jpg; path = ../../../../../../Downloads/12.jpg; sourceTree = "<group>"; };
+		8E44B2391CF4433C00E2CD76 /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12.jpg; sourceTree = "<group>"; };
+		8E44B23A1CF4433C00E2CD76 /* Beautiful-Blur-Wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Beautiful-Blur-Wallpaper.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +105,8 @@
 		8E1700C71CF0212000BE5C50 /* LoginTest */ = {
 			isa = PBXGroup;
 			children = (
-				8E1700FD1CF0366800BE5C50 /* 12.jpg */,
-				8E1700FB1CF025AF00BE5C50 /* Beautiful-Blur-Wallpaper.jpg */,
+				8E44B2391CF4433C00E2CD76 /* 12.jpg */,
+				8E44B23A1CF4433C00E2CD76 /* Beautiful-Blur-Wallpaper.jpg */,
 				8E1700CB1CF0212000BE5C50 /* AppDelegate.h */,
 				8E1700CC1CF0212000BE5C50 /* AppDelegate.m */,
 				8E1700CE1CF0212000BE5C50 /* ViewController.h */,
@@ -252,11 +252,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E1700FE1CF0366800BE5C50 /* 12.jpg in Resources */,
+				8E44B23B1CF4433C00E2CD76 /* 12.jpg in Resources */,
+				8E44B23C1CF4433C00E2CD76 /* Beautiful-Blur-Wallpaper.jpg in Resources */,
 				8E1700D81CF0212000BE5C50 /* LaunchScreen.storyboard in Resources */,
 				8E1700D51CF0212000BE5C50 /* Assets.xcassets in Resources */,
 				8E1700D31CF0212000BE5C50 /* Main.storyboard in Resources */,
-				8E1700FC1CF025AF00BE5C50 /* Beautiful-Blur-Wallpaper.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +507,7 @@
 				8E1700F41CF0212000BE5C50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E1700F51CF0212000BE5C50 /* Build configuration list for PBXNativeTarget "LoginTestTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +516,7 @@
 				8E1700F71CF0212000BE5C50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E1700F81CF0212000BE5C50 /* Build configuration list for PBXNativeTarget "LoginTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +525,7 @@
 				8E1700FA1CF0212000BE5C50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

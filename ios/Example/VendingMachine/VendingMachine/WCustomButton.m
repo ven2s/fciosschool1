@@ -11,8 +11,8 @@
 @interface WCustomButton()
 
 @property (nonatomic, weak) UIImageView *drinkImg;
-@property (nonatomic, weak) UILabel *titleLB;
-@property (nonatomic, weak) UILabel *costLB;
+@property (nonatomic, weak) UILabel *titleLable;
+@property (nonatomic, weak) UILabel *costLable;
 @property (nonatomic, weak) UIButton *actionBtn;
 
 @end
@@ -33,20 +33,20 @@
     [self addSubview:drinkImg];
     self.drinkImg = drinkImg;
     
-    UILabel *titleLB = [[UILabel alloc]init];
-    titleLB.textAlignment = NSTextAlignmentCenter;
-    titleLB.textColor = [UIColor blackColor];
-    titleLB.font = [UIFont systemFontOfSize:15];
-    [self addSubview:titleLB];
-    self.titleLB = titleLB;
+    UILabel *titleLable = [[UILabel alloc]init];
+    titleLable.textAlignment = NSTextAlignmentCenter;
+    titleLable.textColor = [UIColor blackColor];
+    titleLable.font = [UIFont systemFontOfSize:15];
+    [self addSubview:titleLable];
+    self.titleLable = titleLable;
     
     
-    UILabel *costLB = [[UILabel alloc]init];
-    costLB.textAlignment = NSTextAlignmentRight;
-    costLB.textColor = [UIColor orangeColor];
-    costLB.font = [UIFont systemFontOfSize:15];
-    [self addSubview:costLB];
-    self.costLB = costLB;
+    UILabel *costLable = [[UILabel alloc]init];
+    costLable.textAlignment = NSTextAlignmentRight;
+    costLable.textColor = [UIColor orangeColor];
+    costLable.font = [UIFont systemFontOfSize:15];
+    [self addSubview:costLable];
+    self.costLable = costLable;
     
     
     
@@ -60,18 +60,18 @@
 - (void) updateLayout{
     
     [self.drinkImg setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - 22)];
-    [self.titleLB setFrame:CGRectMake(0, self.frame.size.height - 22, self.frame.size.width/2, 22)];
-    [self.costLB setFrame:CGRectMake(70, self.frame.size.height - 22, self.frame.size.width/2, 22)];
+    [self.titleLable setFrame:CGRectMake(0, self.frame.size.height - 22, self.frame.size.width/2, 22)];
+    [self.costLable setFrame:CGRectMake(70, self.frame.size.height - 22, self.frame.size.width/2, 22)];
     [self.actionBtn setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
 }
 
 
 - (void)setTitle:(NSString *)title{
-    [self.titleLB setText:title];
+    [self.titleLable setText:title];
 }
 
 - (void)setCost:(NSString *)cost{
-    [self.costLB setText:cost];
+    [self.costLable setText:cost];
 }
 
 - (void)setImageWithName:(NSString *)imageName{

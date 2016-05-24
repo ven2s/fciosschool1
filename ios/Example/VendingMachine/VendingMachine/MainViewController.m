@@ -19,18 +19,18 @@
 @property (nonatomic, weak) IBOutlet UIView *menuView;
 
 //500원 추가영역
-@property (nonatomic, weak) IBOutlet UIView *input500CoinArea;
-@property (nonatomic, weak) UILabel *title500CoinLB;
+@property (nonatomic, weak) IBOutlet UIView *input500CoinAreaView;
+@property (nonatomic, weak) UILabel *title500CoinLable;
 @property (nonatomic, weak) UIButton *add500CoinBtn;
 
 //100원 추가영역
-@property (nonatomic, weak) IBOutlet UIView *input100CoinArea;
-@property (nonatomic, weak) UILabel *title100CoinLB;
+@property (nonatomic, weak) IBOutlet UIView *input100CoinAreaView;
+@property (nonatomic, weak) UILabel *title100CoinLable;
 @property (nonatomic, weak) UIButton *add100CoinBtn;
 
 //돈컨트롤(잔액,반환버튼)
-@property (nonatomic, weak) IBOutlet UIView *moneyControllArea;
-@property (nonatomic, weak) UILabel *moneyTitleLB;
+@property (nonatomic, weak) IBOutlet UIView *moneyControllAreaView;
+@property (nonatomic, weak) UILabel *moneyTitleLable;
 @property (nonatomic, weak) UITextField *remainMoneyShowTF;
 @property (nonatomic, weak) UIButton *moneyChangeBtn;
 
@@ -102,64 +102,64 @@
         }
     }
 
-//    UIView *input500CoinArea = [[UIView alloc]init];
-//    [input500CoinArea setBackgroundColor:areaColor];
-//    [self.view addSubview:input500CoinArea];
-//    self.input500CoinArea = input500CoinArea;
+//    UIView *input500CoinAreaView = [[UIView alloc]init];
+//    [input500CoinAreaView setBackgroundColor:areaColor];
+//    [self.view addSubview:input500CoinAreaView];
+//    self.input500CoinAreaView = input500CoinAreaView;
     {
-        UILabel *title500CoinLB = [[UILabel alloc]init];
-        title500CoinLB.text = @"500원";
-        title500CoinLB.textColor = [UIColor blackColor];
-        title500CoinLB.textAlignment = NSTextAlignmentRight;
-        [self.input500CoinArea addSubview:title500CoinLB];
-        self.title500CoinLB = title500CoinLB;
+        UILabel *title500CoinLable = [[UILabel alloc]init];
+        title500CoinLable.text = @"500원";
+        title500CoinLable.textColor = [UIColor blackColor];
+        title500CoinLable.textAlignment = NSTextAlignmentRight;
+        [self.input500CoinAreaView addSubview:title500CoinLable];
+        self.title500CoinLable = title500CoinLable;
         
         UIButton *add500CoinBtn = [UIButton buttonWithType:UIButtonTypeContactAdd];
                                    
         add500CoinBtn.tag = 500;
         [add500CoinBtn addTarget:self action:@selector(onTouchupInsideAddCoin:) forControlEvents:UIControlEventAllEvents];
-        [self.input500CoinArea addSubview:add500CoinBtn];
+        [self.input500CoinAreaView addSubview:add500CoinBtn];
         self.add500CoinBtn = add500CoinBtn;
     }
 
-//    UIView *input100CoinArea = [[UIView alloc]init];
-//    [input100CoinArea setBackgroundColor:areaColor];
-//    [self.view addSubview:input100CoinArea];
-//    self.input100CoinArea = input100CoinArea;
+//    UIView *input100CoinAreaView = [[UIView alloc]init];
+//    [input100CoinAreaView setBackgroundColor:areaColor];
+//    [self.view addSubview:input100CoinAreaView];
+//    self.input100CoinAreaView = input100CoinAreaView;
     {
-        UILabel *title100CoinLB = [[UILabel alloc]init];
-        title100CoinLB.text = @"100원";
-        title100CoinLB.textColor = [UIColor blackColor];
-        title100CoinLB.textAlignment = NSTextAlignmentRight;
-        [self.input100CoinArea addSubview:title100CoinLB];
-        self.title100CoinLB = title100CoinLB;
+        UILabel *title100CoinLable = [[UILabel alloc]init];
+        title100CoinLable.text = @"100원";
+        title100CoinLable.textColor = [UIColor blackColor];
+        title100CoinLable.textAlignment = NSTextAlignmentRight;
+        [self.input100CoinAreaView addSubview:title100CoinLable];
+        self.title100CoinLable = title100CoinLable;
         
         UIButton *add100CoinBtn = [UIButton buttonWithType:UIButtonTypeContactAdd];
         add100CoinBtn.tag = 100;
         [add100CoinBtn addTarget:self action:@selector(onTouchupInsideAddCoin:) forControlEvents:UIControlEventAllEvents];
-        [self.input100CoinArea addSubview:add100CoinBtn];
+        [self.input100CoinAreaView addSubview:add100CoinBtn];
         self.add100CoinBtn = add100CoinBtn;
 
     }
     
-//    UIView *moneyControllArea = [[UIView alloc]init];
-//    [moneyControllArea setBackgroundColor:areaColor];
-//    [self.view addSubview:moneyControllArea];
-//    self.moneyControllArea = moneyControllArea;
+//    UIView *moneyControllAreaView = [[UIView alloc]init];
+//    [moneyControllAreaView setBackgroundColor:areaColor];
+//    [self.view addSubview:moneyControllAreaView];
+//    self.moneyControllAreaView = moneyControllAreaView;
     {
-        UILabel *moneyTitleLB = [[UILabel alloc]init];
-        moneyTitleLB.text = @"Money";
-        moneyTitleLB.textColor = [UIColor blackColor];
-        moneyTitleLB.font =[UIFont systemFontOfSize:15];
-        [self.moneyControllArea addSubview:moneyTitleLB];
-        self.moneyTitleLB = moneyTitleLB;
+        UILabel *moneyTitleLable = [[UILabel alloc]init];
+        moneyTitleLable.text = @"Money";
+        moneyTitleLable.textColor = [UIColor blackColor];
+        moneyTitleLable.font =[UIFont systemFontOfSize:15];
+        [self.moneyControllAreaView addSubview:moneyTitleLable];
+        self.moneyTitleLable = moneyTitleLable;
         
         
         UITextField *remainMoneyShowTF = [[UITextField alloc]init];
         remainMoneyShowTF.userInteractionEnabled = NO;
         remainMoneyShowTF.borderStyle = UITextBorderStyleLine;
         remainMoneyShowTF.textAlignment = NSTextAlignmentCenter;
-        [self.moneyControllArea addSubview:remainMoneyShowTF];
+        [self.moneyControllAreaView addSubview:remainMoneyShowTF];
         self.remainMoneyShowTF = remainMoneyShowTF;
 
         
@@ -168,7 +168,7 @@
         [moneyChangeBtn addTarget:self action:@selector(onTouchupInsideMoneyChangeBtn:) forControlEvents:UIControlEventTouchUpInside];
         [moneyChangeBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [moneyChangeBtn setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-        [self.moneyControllArea addSubview:moneyChangeBtn];
+        [self.moneyControllAreaView addSubview:moneyChangeBtn];
         self.moneyChangeBtn = moneyChangeBtn;
         
     }
@@ -202,25 +202,25 @@
         }
     }
     
-    [self.input500CoinArea setFrame:(CGRectMake(SIDE_MARGIN, offsetY, self.view.frame.size.width - SIDE_MARGIN * 2, 30))];
-    offsetY += self.input500CoinArea.frame.size.height+1;
+    [self.input500CoinAreaView setFrame:(CGRectMake(SIDE_MARGIN, offsetY, self.view.frame.size.width - SIDE_MARGIN * 2, 30))];
+    offsetY += self.input500CoinAreaView.frame.size.height+1;
     {
-        [self.title500CoinLB setFrame:(CGRectMake(0, 0, 256, self.input500CoinArea.frame.size.height))];
+        [self.title500CoinLable setFrame:(CGRectMake(0, 0, 256, self.input500CoinAreaView.frame.size.height))];
         [self.add500CoinBtn setFrame:(CGRectMake(270, 0, 30, 30))];
     }
    
-    [self.input100CoinArea setFrame:(CGRectMake(SIDE_MARGIN, offsetY, self.view.frame.size.width - SIDE_MARGIN * 2, 30))];
-    offsetY += self.input100CoinArea.frame.size.height + 10;
+    [self.input100CoinAreaView setFrame:(CGRectMake(SIDE_MARGIN, offsetY, self.view.frame.size.width - SIDE_MARGIN * 2, 30))];
+    offsetY += self.input100CoinAreaView.frame.size.height + 10;
     {
-        [self.title100CoinLB setFrame:(CGRectMake(0, 0, 256, self.input100CoinArea.frame.size.height))];
+        [self.title100CoinLable setFrame:(CGRectMake(0, 0, 256, self.input100CoinAreaView.frame.size.height))];
         [self.add100CoinBtn setFrame:(CGRectMake(270, 0, 30, 30))];
 
     }
    
-    [self.moneyControllArea setFrame:(CGRectMake(SIDE_MARGIN, offsetY, self.view.frame.size.width - SIDE_MARGIN * 2, 30))];
-    offsetY += self.moneyControllArea.frame.size.height + 10;
+    [self.moneyControllAreaView setFrame:(CGRectMake(SIDE_MARGIN, offsetY, self.view.frame.size.width - SIDE_MARGIN * 2, 30))];
+    offsetY += self.moneyControllAreaView.frame.size.height + 10;
     {
-        [self.moneyTitleLB setFrame:(CGRectMake(5, 0, 61, 30))];
+        [self.moneyTitleLable setFrame:(CGRectMake(5, 0, 61, 30))];
         [self.remainMoneyShowTF setFrame:(CGRectMake(63, 0, 200, 30))];
         [self.moneyChangeBtn setFrame:(CGRectMake(270, 0, 35, 30))];
     }
