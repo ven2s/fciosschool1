@@ -213,10 +213,11 @@
    ex) alloc은 그림을 그리기 위한 캔버스가 만들어지고 초기화는 그 그림을 그리기 위해 준비가 된 상태이다. 
 
   상속 : 새로운 클래스가 기존의 클래스의 속성(자료)와 행위(연산)을 이용할수 있게 하는 기능
-	@Implementation Car : NSObject  : NSObject를 상속 받는다
+	
+	```@Implementation Car : NSObject  : NSObject를 상속 받는다```
 
   메소드 : 인스턴스가 수행하는 행동
-    [-,+] ([type])[식별자1]:([type])[매개변수명] [식별자2]:([type])[매개변수명]
+    ```[-,+] ([type])[식별자1]:([type])[매개변수명] [식별자2]:([type])[매개변수명]```
 
   실습 : ios/Example/TestScore/TestScore/ToolBox.*
 
@@ -227,7 +228,7 @@
 
 + __15일차__
 
-	따라치기
+	__따라치기__
 	VendingMachine
 	: /ios/Example/VendingMachine/VendingMachine/*.*
 
@@ -252,10 +253,9 @@ MVC모델로 살펴보는 구조
   __3. AutoLayout__
 
 + 18일차
-	
 	__자료구조실습__
 	실습을 통한 Stack구조 이해
-
+     \* ios/Example/DataStructure/Algorism/main.c
 + 19일차
 	 
 	ARC란? compiler time단에서 자동적으로 메모리를 해제해준다.
@@ -264,23 +264,39 @@ MVC모델로 살펴보는 구조
 
 ### 5주차
 
-+ 21일차
-  자료구조 & 알고리즘 두번째 시간
-  + 스택을 이용한 프로그래밍 시간 
-  : 괄호 구하기 (배열을 구할때와 스택을 이용한 방법을 구할때가 다른다.)
-+ 22일차
-+ 23일차
-+ 24일차
-+ 25일차
++	**21일차**
+__자료구조 & 알고리즘 두번째 시간__
+	+ 스택을 이용한 프로그래밍 시간 
+	  괄호 구하기 (배열을 구할때와 스택을 이용한 방법을 구할때가 다른다.)
+	  큐와 덱 표현하기
+ 
+ \* 실습 : ios/Example/DataStructure/DS_Secnon/main.m
++ **22일차**
+  + **iOS구조파악**
+	  * SandBox
+	  * FrameWork계층구조
+	  * Size Resolution
+  + **UIComponent**
+	  	* UIView
+	  	* UILable
+	  	* UIImageView
 
-### 6주차
+	 \* 실습 : ios/Example/UITest/ViewController.m
++ **23일차**
+
++ **24일차**
++ **25일차**
+
+### **6주차**
 + 26일차
 + 27일차
 + 28일차
 + 29일차
 + 30일차
 
-### 7주차
-### 8주차
-### 9주차
-### 10주차
+### **7주차**
+### **8주차**
+### **9주차**
+### **10주차**
+
+## **프로젝트**
