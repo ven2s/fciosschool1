@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E16505E1CF87159008F5DFF /* RegistorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E16505D1CF87159008F5DFF /* RegistorViewController.m */; };
+		8E1650611CFD1A62008F5DFF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1650601CFD1A62008F5DFF /* MainViewController.m */; };
 		8E1700CA1CF0212000BE5C50 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1700C91CF0212000BE5C50 /* main.m */; };
 		8E1700CD1CF0212000BE5C50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1700CC1CF0212000BE5C50 /* AppDelegate.m */; };
 		8E1700D01CF0212000BE5C50 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1700CF1CF0212000BE5C50 /* ViewController.m */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E16505C1CF87159008F5DFF /* RegistorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistorViewController.h; sourceTree = "<group>"; };
+		8E16505D1CF87159008F5DFF /* RegistorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistorViewController.m; sourceTree = "<group>"; };
+		8E16505F1CFD1A62008F5DFF /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		8E1650601CFD1A62008F5DFF /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		8E1700C51CF0212000BE5C50 /* LoginTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1700C91CF0212000BE5C50 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8E1700CB1CF0212000BE5C50 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -116,6 +122,10 @@
 				8E1700D61CF0212000BE5C50 /* LaunchScreen.storyboard */,
 				8E1700D91CF0212000BE5C50 /* Info.plist */,
 				8E1700C81CF0212000BE5C50 /* Supporting Files */,
+				8E16505C1CF87159008F5DFF /* RegistorViewController.h */,
+				8E16505D1CF87159008F5DFF /* RegistorViewController.m */,
+				8E16505F1CFD1A62008F5DFF /* MainViewController.h */,
+				8E1650601CFD1A62008F5DFF /* MainViewController.m */,
 			);
 			path = LoginTest;
 			sourceTree = "<group>";
@@ -282,7 +292,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E1700D01CF0212000BE5C50 /* ViewController.m in Sources */,
+				8E16505E1CF87159008F5DFF /* RegistorViewController.m in Sources */,
 				8E1700CD1CF0212000BE5C50 /* AppDelegate.m in Sources */,
+				8E1650611CFD1A62008F5DFF /* MainViewController.m in Sources */,
 				8E1700CA1CF0212000BE5C50 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
