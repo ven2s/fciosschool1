@@ -98,7 +98,7 @@
 
                 NSString *urlString = self.urlTextField.text;
                 
-                if([urlString rangeOfString:@"fastcampus.co.kr"].location != NSNotFound){
+                if([urlString rangeOfString:@"fastcampus.co.kr"].location == NSNotFound){
                     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]
                                                                 cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                                             timeoutInterval:30];
