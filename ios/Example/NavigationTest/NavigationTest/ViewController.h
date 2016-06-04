@@ -1,6 +1,6 @@
 //
-//  MainViewController.h
-//  LoginTest
+//  ViewController.h
+//  NavigationTest
 //
 //  Created by David June Kang on 2016. 5. 31..
 //  Copyright © 2016년 ven2s. All rights reserved.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UIViewController
+@interface ViewController : UIViewController
 
-@property (strong, nonatomic) NSString *userId;
 
 @end
+

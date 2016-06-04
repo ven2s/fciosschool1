@@ -19,6 +19,8 @@
 		8E1700EE1CF0212000BE5C50 /* LoginTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1700ED1CF0212000BE5C50 /* LoginTestUITests.m */; };
 		8E44B23B1CF4433C00E2CD76 /* 12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E44B2391CF4433C00E2CD76 /* 12.jpg */; };
 		8E44B23C1CF4433C00E2CD76 /* Beautiful-Blur-Wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E44B23A1CF4433C00E2CD76 /* Beautiful-Blur-Wallpaper.jpg */; };
+		8E49F6E81D02FB110017CA7F /* loginList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E49F6E71D02FB110017CA7F /* loginList.plist */; };
+		8E49F6EB1D02FB930017CA7F /* DataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E49F6EA1D02FB930017CA7F /* DataCenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,9 @@
 		8E1700EF1CF0212000BE5C50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E44B2391CF4433C00E2CD76 /* 12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 12.jpg; sourceTree = "<group>"; };
 		8E44B23A1CF4433C00E2CD76 /* Beautiful-Blur-Wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Beautiful-Blur-Wallpaper.jpg"; sourceTree = "<group>"; };
+		8E49F6E71D02FB110017CA7F /* loginList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = loginList.plist; sourceTree = "<group>"; };
+		8E49F6E91D02FB930017CA7F /* DataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCenter.h; sourceTree = "<group>"; };
+		8E49F6EA1D02FB930017CA7F /* DataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCenter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +131,9 @@
 				8E16505D1CF87159008F5DFF /* RegistorViewController.m */,
 				8E16505F1CFD1A62008F5DFF /* MainViewController.h */,
 				8E1650601CFD1A62008F5DFF /* MainViewController.m */,
+				8E49F6E71D02FB110017CA7F /* loginList.plist */,
+				8E49F6E91D02FB930017CA7F /* DataCenter.h */,
+				8E49F6EA1D02FB930017CA7F /* DataCenter.m */,
 			);
 			path = LoginTest;
 			sourceTree = "<group>";
@@ -262,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E49F6E81D02FB110017CA7F /* loginList.plist in Resources */,
 				8E44B23B1CF4433C00E2CD76 /* 12.jpg in Resources */,
 				8E44B23C1CF4433C00E2CD76 /* Beautiful-Blur-Wallpaper.jpg in Resources */,
 				8E1700D81CF0212000BE5C50 /* LaunchScreen.storyboard in Resources */,
@@ -295,6 +304,7 @@
 				8E16505E1CF87159008F5DFF /* RegistorViewController.m in Sources */,
 				8E1700CD1CF0212000BE5C50 /* AppDelegate.m in Sources */,
 				8E1650611CFD1A62008F5DFF /* MainViewController.m in Sources */,
+				8E49F6EB1D02FB930017CA7F /* DataCenter.m in Sources */,
 				8E1700CA1CF0212000BE5C50 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
