@@ -41,7 +41,8 @@
 -(void) createView{
     self.navigationController.navigationBarHidden = NO;
     [self.agreeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [self.agreeButton setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
+    [self.agreeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -117,6 +118,15 @@
     return YES;
 }
 
+//이동시 확정시 값은 전달해준다
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"REG_TO_MAIN"]){
+        MainViewController *mainView = [segue destinationViewController];
+        [mainView setUserId:self.email.text];
+    }
+}
+
+
 //입력값을 빈공간을 체크한다.
 -(BOOL) isCheckAll{
     
@@ -185,11 +195,29 @@
 
 //메세지를 띄운다.
 - (void) showMsg:(NSString *)message{
-    UIAlertView *alert = [[UIAlertView alloc]init];
-    alert.message = message;
-    [alert addButtonWithTitle:@"확인"];
     
-    [alert show];
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"알림창"
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"확인"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nullable action){
+                                                         [alertController dismissViewControllerAnimated:YES completion:nil];
+                                                     }];
+    
+    
+    
+    [alertController addAction:okButton];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
 }
 
+//텍스트필드 리턴버튼 누를시 키보드 내려가도록 바꿈
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
 @end

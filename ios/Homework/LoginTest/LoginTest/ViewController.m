@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *registorButton;
 @property (nonatomic) UITextField *targetTextField;
 
-- (IBAction)onTouchUpInsideButton:(UIButton *)sender;
+//- (IBAction)onTouchUpInsideButton:(UIButton *)sender;
 
 @end
 
@@ -50,11 +50,7 @@
     return YES;
 }
 
--(BOOL) isCheckLoginWithID:(NSString *)userID userPassword:(NSString *)userPassword{
-    
-    
-    return NO;
-}
+
 
 -(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
     
@@ -100,7 +96,6 @@
 
 //이동이 정해진후
 //메인화면으로 이동시 메인 객체에 ID전달
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([[segue identifier] isEqualToString:@"LOGIN_TO_MAIN"]){
         MainViewController *mainView = [segue destinationViewController];
@@ -149,10 +144,23 @@
 //}
 
 - (void) showMsg:(NSString *)message{
-    UIAlertView *alert = [[UIAlertView alloc]init];
-    alert.message = message;
-    [alert addButtonWithTitle:@"확인"];
+
     
-    [alert show];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"알림창"
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"확인"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nullable action){
+                                                            [alertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    
+    
+    [alertController addAction:okButton];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
 }
 @end
