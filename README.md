@@ -147,7 +147,7 @@
 	숫자형 : NSNumber, NSInteger 등
 	단, 참조형의 경우에는 실제 연산이 불가능하다.
 	ex) 
-	``` 
+``` 
 	NSNumber @3 + @5 = ?   => (Error)
 	NSInteger 3 + 5  = ?   => 8
 	NSNumber *num1 = @3, *num2 = @5
@@ -182,14 +182,15 @@
 	__Objective-C 기초__
 
 	__1. 클래스와 객체__
-	선언부(Interface)
+	+ 선언부(Interface)
 	헤더 파일 내 @interface ~ @end 사이에 기록
 	메서드, 프로퍼티를 선언한다.
 			
-	구현부(Implementation)
+	+ 구현부(Implementation)
 	클래스의 인스턴스 변수 및 메서드의 구현 실제코드가 담긴다.
 	_.m_ 파일에 @implementation @end 사이에 기록을 한다.
-	```
+	
+```
 	@implementation [ClassName] : NSObject
 	{
 	  NSString *name; //인스턴스 변수
@@ -198,23 +199,23 @@
 	  //실행부
 	}
 	@End
-	```	
-	실습 
+```
+\* 실습 
 	: ios/Example/TestScore/TestScore/main.m
-  : ios/Example/TestScore/TestScore/CalculationScore.*
+    : ios/Example/TestScore/TestScore/CalculationScore.\*
 
   인스턴스화와 초기화
-  ```
+```
   Car *evoke =[[Car alloc]init];
   Car *evoke = new Car();
-  ```
+```
   \* alloc : 객체를 사용하기 위한 메모리 공간을 확보한다.  
   \* init  : 객체를 쓰기 위한 초기화를 한다.
    ex) alloc은 그림을 그리기 위한 캔버스가 만들어지고 초기화는 그 그림을 그리기 위해 준비가 된 상태이다. 
 
   상속 : 새로운 클래스가 기존의 클래스의 속성(자료)와 행위(연산)을 이용할수 있게 하는 기능
 	
-	```@Implementation Car : NSObject  : NSObject를 상속 받는다```
+```@Implementation Car : NSObject  : NSObject를 상속 받는다```
 
   메소드 : 인스턴스가 수행하는 행동
     ```[-,+] ([type])[식별자1]:([type])[매개변수명] [식별자2]:([type])[매개변수명]```
@@ -283,20 +284,65 @@ __자료구조 & 알고리즘 두번째 시간__
 
 	 \* 실습 : ios/Example/UITest/ViewController.m
 + **23일차**
+ + Dynamic Programming
+     + 피보나치수 구하기
 
 + **24일차**
+ + UIControl
+ + Delegate 와 Protocol
+      + UITextFieldDelegate
 + **25일차**
-
+	+ UIScrolView
+	+ Block
+	+ Animation
+	
+	\*  과제 : ios/Homework/WebViewTest/\*.\*
 ### **6주차**
 + 26일차
 + 27일차
+  UINavagationController
+  UITabbarController
+
 + 28일차
+ 그래프를 이용한 지하철 구간 구하기
+
 + 29일차
+ 
+
 + 30일차
+ **Review**
+ + Protocol & Delegate
+ + Block
+ + Dictionary
+
+	**UX/UI**
+ + 휴리스틱평가법을 이용한 앱평가 방법
 
 ### **7주차**
++ 31일차
++ 32일차
++ 33일차
++ 34일차
+
 ### **8주차**
++ 35일차
++ 36이라
++ 37일차
++ 38일차
++ 39일차
+
 ### **9주차**
++ 40일차
++ 41일차
++ 42일차
++ 43일차
++ 44일차
+
 ### **10주차**
++ 45일차
++ 46일차
++ 47일차
++ 48일차
++ 49일차
 
 ## **프로젝트**
