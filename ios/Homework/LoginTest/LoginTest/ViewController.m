@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *registorButton;
 @property (nonatomic) UITextField *targetTextField;
+@property (weak, nonatomic) IBOutlet UIView *loginView;
 
 //- (IBAction)onTouchUpInsideButton:(UIButton *)sender;
 
@@ -28,7 +29,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = YES;
+
+    [self redrawLoginView];
 }
+
+
+- (void) redrawLoginView{
+    
+    CGSize size = CGSizeMake(self.loginView.frame.size.width, self.loginView.frame.size.height);
+    
+    UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    [bgView setBackgroundColor:[UIColor whiteColor]];
+    bgView.alpha = 0.33;
+    
+    [self.loginView addSubview:bgView];
+    
+    
+    UITextField *emailId = self.emailId;
+    emailId.delegate = self;
+    [self.loginView addSubview:emailId];
+    
+    UITextField *password = self.password;
+    password.delegate = self;
+    [self.loginView addSubview:password];
+    
+    UIButton *loginButton = self.loginButton;
+    [self.loginView addSubview:loginButton];
+    
+    UIButton *registorButton = self.registorButton;
+    [self.loginView  addSubview:registorButton];
+    
+
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
