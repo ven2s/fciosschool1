@@ -10,6 +10,7 @@
 #import "RegistorViewController.h"
 #import "MainViewController.h"
 #import "DataCenter.h"
+#import "MasterViewController.h"
 
 
 @interface ViewController () <UITextFieldDelegate, UIAlertViewDelegate>
@@ -20,7 +21,9 @@
 @property (nonatomic) UITextField *targetTextField;
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 
-//- (IBAction)onTouchUpInsideButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *securityButton;
+
+- (IBAction)onTouchUpInsideButton:(UIButton *)sender;
 
 @end
 
@@ -31,13 +34,23 @@
     self.navigationController.navigationBarHidden = YES;
 
     [self redrawLoginView];
+   // [self checkAutoLogin];
 }
 
+- (void) checkAutoLogin{
+    self.emailId.text = [[DataCenter sharedInstance]autoLoginToString];
+    if([[DataCenter sharedInstance]autoLogin]){
+        
+        [self performSegueWithIdentifier:@"LOGIN_TO_MAIN" sender:self];
+    }
+}
 
+//로그인View 다시 그리기 (배경색을 alpha값을 내리기 위해서
 - (void) redrawLoginView{
     
     CGSize size = CGSizeMake(self.loginView.frame.size.width, self.loginView.frame.size.height);
     
+    //로그인뷰 배경화면
     UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     [bgView setBackgroundColor:[UIColor whiteColor]];
     bgView.alpha = 0.33;
@@ -65,12 +78,11 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     self.navigationController.navigationBarHidden = YES;
+    [self checkAutoLogin];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -100,6 +112,11 @@
         
         [self.targetTextField setBackgroundColor:[UIColor whiteColor]];
         
+        //자동로그인일 경우 
+        if([dataCenter autoLogin]){
+            return YES;
+        }
+        
         if (!match){
             [self showMsg:@"이메일 형식이 맞지 않습니다"];
             [self.emailId setBackgroundColor:UIColorFromRGB(0xFFB1BC)];
@@ -118,7 +135,7 @@
         
         //20160605 로그인 대상 체크
         if(![dataCenter isUser:self.emailId.text passwd:self.password.text]){
-            [self showMsg:@"가입된 회원이 아닙니다."];
+            [self showMsg:@"가입된 회원이 아니거나 계정정보를 다시 확인 하십시오."];
             return NO;
         }
         
@@ -133,15 +150,19 @@
     if([[segue identifier] isEqualToString:@"LOGIN_TO_MAIN"]){
         MainViewController *mainView = [segue destinationViewController];
         [mainView setUserId:self.emailId.text];
+        
+        DataCenter *dataCenter = [DataCenter sharedInstance];
+        
+        [dataCenter setAutoLogin:YES email:self.emailId.text];
     }
 }
 
 
+
+
+- (IBAction)onTouchUpInsideButton:(UIButton *)sender {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 //
-//
-//- (IBAction)onTouchUpInsideButton:(UIButton *)sender {
-//    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    
 //    [self.targetTextField setBackgroundColor:[UIColor whiteColor]];
 //    if(sender.tag == 1){
 //        NSString *string = self.emailId.text;
@@ -174,7 +195,23 @@
 //        [self presentViewController:regView animated:YES completion:nil];
 //
 //    }
-//}
+    
+    if(sender.tag == 4){
+        if([self.emailId.text isEqualToString:@"master@do.com"]){
+            DataCenter *dataCenter = [DataCenter sharedInstance];
+            
+            if([dataCenter isUser:self.emailId.text passwd:self.password.text]){
+                [self showMsg:@"환영 합니다. 관리자님"];
+                MasterViewController *masterViewController = [storyBoard instantiateViewControllerWithIdentifier:@"MASTER_PAGE"];
+                [self presentViewController:masterViewController animated:YES completion:nil];
+            }else{
+                [self showMsg:@"접근할수 없습니다"];
+                
+            }
+        }
+        
+    }
+}
 
 - (void) showMsg:(NSString *)message{
 

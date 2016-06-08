@@ -1,15 +1,12 @@
 //
 //  AppDelegate.m
-//  LoginTest
+//  TableViewExample
 //
-//  Created by David June Kang on 2016. 5. 21..
-//  Copyright © 2016년 ven2s. All rights reserved.
+//  Created by youngmin joo on 2016. 6. 6..
+//  Copyright © 2016년 WingsCompany. All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "DataCenter.h"
-#import "MainViewController.h"
-#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,24 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-//스토리보드에서 rootViewer를 해제 해줘야 한다
-//
-//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    
-//    UINavigationController *navi;
-//    
-//    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    
-//    if([[DataCenter sharedInstance]autoLogin]){
-//        MainViewController *mainViewContorller = [storyBoard instantiateViewControllerWithIdentifier:@"MainView"];
-//        navi = [[UINavigationController alloc] initWithRootViewController:mainViewContorller];
-//    }else{
-//        ViewController *loginViewController = [storyBoard instantiateViewControllerWithIdentifier:@"LoginView"];
-//        navi = [[UINavigationController alloc] initWithRootViewController:loginViewController];
-//    }
-    
-    
     return YES;
 }
 

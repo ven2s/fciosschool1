@@ -20,10 +20,25 @@
         return dataCenter;
 }
 
+- (NSArray *) loadData{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDicrectoy = [paths objectAtIndex:0];
+    NSString *path = [documentDicrectoy stringByAppendingPathComponent:@"loginList.plist"];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if(![fileManager fileExistsAtPath:path]){
+        NSString *bundlePath = [[NSBundle mainBundle]pathForResource:@"loginList" ofType:@"plist"];
+        [fileManager copyItemAtPath:bundlePath toPath:path error:nil];
+    }
+
+    return [NSArray arrayWithContentsOfFile:path];
+}
+
+
 - (BOOL) addEmail:(NSString *)email passwd:(NSString *)passWord nickName:(NSString *)nick realName:(NSString *)name gender:(NSString *)sex{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDicrectoy = [paths objectAtIndex:0];
-    NSString *path = [documentDicrectoy stringByAppendingString:@"loginList.plist"];
+    NSString *path = [documentDicrectoy stringByAppendingPathComponent:@"loginList.plist"];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if(![fileManager fileExistsAtPath:path]){
@@ -34,33 +49,27 @@
     NSMutableArray *loginList = [NSMutableArray arrayWithContentsOfFile:path];
     NSDictionary *user = @{@"email":email, @"password":passWord, @"nickName":nick, @"realName":name, @"gender":sex};
     
-    [loginList addObject:user];
+    BOOL haveUser = [self isUser:email passwd:passWord];
     
-    [loginList writeToFile:path atomically:NO];
+    if(!haveUser){
+        [loginList addObject:user];
+        [loginList writeToFile:path atomically:NO];
+    }
+    
+    NSLog(@"%@",haveUser ? @"YES" : @"NO");
     
     return [self isUser:email passwd:passWord];
 }
 
 - (BOOL) isUser:(NSString *)userId passwd:(NSString *)pass{
-    NSLog(@"call isUser : %@",userId);
+    NSLog(@"call isUser : %@ %ld",userId,[self loadData].count);
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentDicrectoy = [paths objectAtIndex:0];
-    NSString *path = [documentDicrectoy stringByAppendingString:@"loginList.plist"];
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if(![fileManager fileExistsAtPath:path]){
-        NSString *bundlePath = [[NSBundle mainBundle]pathForResource:@"loginList" ofType:@"plist"];
-        [fileManager copyItemAtPath:bundlePath toPath:path error:nil];
-    }
-    
+    NSArray *userList = [self loadData];
 
-    NSArray *userList = [NSArray arrayWithContentsOfFile:path];
-    
     for(NSDictionary *user in userList){
         NSString *email = [user objectForKey:@"email"];
         NSString *pw = [user objectForKey:@"password"];
-        
+        NSLog(@"%@, %@",email, pw);
         if([email isEqualToString:userId] && [pw isEqualToString:pass]){
             return YES;
         }
@@ -74,7 +83,7 @@
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDicrectoy = [paths objectAtIndex:0];
-    NSString *path = [documentDicrectoy stringByAppendingString:@"loginList.plist"];
+    NSString *path = [documentDicrectoy stringByAppendingPathComponent:@"loginList.plist"];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if(![fileManager fileExistsAtPath:path]){
@@ -102,5 +111,40 @@
     }
     return @"";
 }
+
+-(BOOL) autoLogin{
+    NSNumber *boolNumber = [[NSUserDefaults standardUserDefaults] objectForKey:@"AUTO_LOGIN"];
+    return boolNumber.boolValue;
+}
+
+-(NSString *) autoLoginToString{
+    NSNumber *boolNumber = [[NSUserDefaults standardUserDefaults] objectForKey:@"AUTO_LOGIN"];
+    if(boolNumber.boolValue){
+        return [NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"USER_ID"]];
+    }
+    
+    return @"";
+}
+
+-(void) setAutoLogin:(BOOL)isAutoLogin{
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:isAutoLogin] forKey:@"AUTO_LOGIN"];
+//    [[NSUserDefaults standardUserDefaults] setBool:isAutoLogin forKey:@"AUTO_LOGIN"];
+}
+
+-(void) setAutoLogin:(BOOL)isAutoLogin email:(NSString *)userId{
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:isAutoLogin] forKey:@"AUTO_LOGIN"];
+    //    [[NSUserDefaults standardUserDefaults] setBool:isAutoLogin forKey:@"AUTO_LOGIN"];
+    [[NSUserDefaults standardUserDefaults]setObject:userId forKey:@"USER_ID"];
+}
+
+-(NSString *) userName{
+    
+    
+    return nil;
+}
+-(void) setUserName:(NSString *) userName{
+    
+}
+
 
 @end

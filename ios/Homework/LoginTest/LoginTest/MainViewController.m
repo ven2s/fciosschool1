@@ -29,8 +29,8 @@
     
     self.showUserInfo.text = [dataCenter showUserInfo:self.userId];
     
-    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -38,5 +38,18 @@
 }
 - (void)viewDidAppear:(BOOL)animated{
     self.navigationController.navigationBarHidden = NO;
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    
+    return YES;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([[segue identifier] isEqualToString:@"RETURN_TO_MAIN"]){
+        
+    }else if([[segue identifier] isEqualToString:@"LOGOUT_TO_MAIN"]){
+       [[DataCenter sharedInstance]setAutoLogin:NO];
+    }
 }
 @end
