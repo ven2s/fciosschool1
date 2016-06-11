@@ -320,7 +320,13 @@ __자료구조 & 알고리즘 두번째 시간__
 
 ### **7주차**
 + 31일차
+UITableView
+경로 : ios/Example/CustomTable/\*.\*
 + 32일차
+__UITableViewController__
+CustomTableCell만들기
+경로 : ios/Example/TableViewExample/\*.\*
+
 + 33일차
 + 34일차
 
